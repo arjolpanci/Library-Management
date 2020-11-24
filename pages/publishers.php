@@ -20,8 +20,8 @@
         <a class="btn" href="../homepage.php"><i class="fas fa-home"></i></i> Home</a>
         <a class="btn" href="books.php"><i class="fas fa-book"></i></i> Books</a>
         <a class="btn" href="authors.php"><i class="fas fa-pen-nib"></i> Authors</a>
-        <a class="btn" href="publishers.php"><i class="fas fa-font"></i> Publishers</a>
-        <a class="active" href="users.php"><i class="fas fa-user"></i> Users</a>
+        <a class="active" href="#contact"><i class="fas fa-font"></i> Publishers</a>
+        <a class="btn" href="users.php"><i class="fas fa-user"></i> Users</a>
         <div class="topnav-right">
             <a href="logout.php"><i class="fas fa-door-open"></i> Log Out</a>
         </div>
@@ -30,30 +30,30 @@
     <table id="styledtable">
         <tr>
             <th>Id</th>
-            <th>Username</th>
-            <th>Password</th>
+            <th>Name</th>
+            <th>Type</th>
         </tr>
 
         <?php
-        $query = "select * from users";
+        $query = "select * from publishers";
         $result = $dataAccess->conn->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $id = $row["ID"];
-                $user = $row["user"];
-                $pass = $row["pass"];
+                $Name = $row["Name"];
+                $Type = $row["Type"];
                 echo "<tr>";
                 echo "<td>" . $id . "</td>";
-                echo "<td>" . $user . "</td>";
-                echo "<td>" . $pass . "</td>";
+                echo "<td>" . $Name . "</td>";
+                echo "<td>" . $Type . "</td>";
                 echo "</tr>";
             }
         }
         ?>
     </table>
 
-    <form action="add-user.php">
-        <button class="loginButton" type="submit">Add User</button>
+    <form action="add-publisher.php">
+        <button class="loginButton" type="submit">Add Publisher</button>
     </form>
 
     <p class="error">

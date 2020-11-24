@@ -28,9 +28,66 @@ class database
         }
     }
 
+    function getAuthorFromId($ID)
+    {
+        $query = "select * from authors where authors.ID=$ID";
+        $result = $this->conn->query($query);
+        if (mysqli_num_rows($result) == 1) {
+            $row = $result->fetch_assoc();
+            $fname = $row["Name"];
+            $lname = $row["Surname"];
+            return ($fname . " " . $lname);
+        } else {
+            return false;
+        }
+    }
+
+    function getPublisherFromId($ID)
+    {
+        $query = "select * from publishers where publishers.ID=$ID";
+        $result = $this->conn->query($query);
+        if (mysqli_num_rows($result) == 1) {
+            $row = $result->fetch_assoc();
+            $name = $row["Name"];
+            return $name;
+        } else {
+            return false;
+        }
+    }
+
     function addUser($user, $pass)
     {
         $query = "insert into users(user, pass) values('$user', '$pass')";
+        $result = $this->conn->query($query);
+        if ($result) {
+            return true;
+        }
+        return false;
+    }
+
+    function addAuthor($fname, $lname)
+    {
+        $query = "insert into authors(Name, Surname) values('$fname', '$lname')";
+        $result = $this->conn->query($query);
+        if ($result) {
+            return true;
+        }
+        return false;
+    }
+
+    function addPublisher($name, $type)
+    {
+        $query = "insert into publishers(Name, Type) values('$name', '$type')";
+        $result = $this->conn->query($query);
+        if ($result) {
+            return true;
+        }
+        return false;
+    }
+
+    function addBook($title, $authorId, $publisherId)
+    {
+        $query = "insert into books(Title, AuthorID, PublisherID) values('$title', '$authorId', '$publisherId')";
         $result = $this->conn->query($query);
         if ($result) {
             return true;

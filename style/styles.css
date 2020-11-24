@@ -64,6 +64,13 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
+input[type="select"] {
+  padding: 8px 5px;
+  margin: 8px 0;
+  font-family: Verdana;
+  box-sizing: border-box;
+}
+
 input[type="password"] {
   padding: 8px 5px;
   margin: 8px 0 0 4px;
@@ -141,4 +148,20 @@ input[type="password"] {
   text-align: left;
   background-color: #ff7f50;
   color: white;
+}
+
+.combobox {
+  font-family: Verdana;
+  padding: 10px;
+  font-size: 16px;
+  height: 34px;
+}
+
+select {
+  background-color: #ff7f50;
+  color: white;
+  display: inline-block;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
 }

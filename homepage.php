@@ -18,9 +18,9 @@
 <body style="background-color: #333;">
     <div class="topnav">
         <a class="active" href="#home"><i class=" fas fa-home"></i></i> Home</a>
-        <a class="btn" href="#books"><i class="fas fa-book"></i></i> Books</a>
-        <a class="btn" href="#news"><i class="fas fa-pen-nib"></i> Authors</a>
-        <a class="btn" href="#contact"><i class="fas fa-font"></i> Publishers</a>
+        <a class="btn" href="pages/books.php"><i class="fas fa-book"></i></i> Books</a>
+        <a class="btn" href="pages/authors.php"><i class="fas fa-pen-nib"></i> Authors</a>
+        <a class="btn" href="pages/publishers.php"><i class="fas fa-font"></i> Publishers</a>
         <a class="btn" href="pages/users.php"><i class="fas fa-user"></i> Users</a>
         <div class="topnav-right">
             <a href="pages/logout.php"><i class="fas fa-door-open"></i> Log Out</a>
