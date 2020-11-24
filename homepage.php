@@ -27,7 +27,12 @@
         </div>
     </div>
 
-    <p class=" bigText">Library Management System</p>
+    <p class="bigText">Library Management System</p>
+    <p class="mediumText">Logged in as:
+        <?php
+        echo $_SESSION["username"];
+        ?>
+    </p>
 </body>
 
 </html>
