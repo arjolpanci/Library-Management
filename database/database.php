@@ -27,6 +27,16 @@ class database
             return false;
         }
     }
+
+    function addUser($user, $pass)
+    {
+        $query = "insert into users(user, pass) values('$user', '$pass')";
+        $result = $this->conn->query($query);
+        if ($result) {
+            return true;
+        }
+        return false;
+    }
 }
 
 $dataAccess = new database("localhost", "root", "", "library");
